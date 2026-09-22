@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow — Smart Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Animated Background -->
+  <div class="bg-canvas">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <span>Task<span class="brand-highlight">Flow</span></span>
+      </a>
+      <div class="nav-actions">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#app" class="nav-link">App</a>
+        <button class="theme-btn" id="themeToggle" title="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Built for productivity
+      </div>
+      <h1 class="hero-title">
+        Organize your life.<br>
+        <span class="gradient-text">Master your tasks.</span>
+      </h1>
+      <p class="hero-desc">
+        TaskFlow is a minimal yet powerful task manager designed to help you 
+        stay focused, prioritize what matters, and get things done — all from 
+        your browser. No sign-up, no clutter, just pure productivity.
+      </p>
+      <div class="hero-cta">
+        <a href="#app" class="btn-primary">
+          Start Managing
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+        <a href="#features" class="btn-ghost">See Features</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" data-target="3">0</span>
+          <span class="stat-label">Core Features</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <div class="stat-row">
+            <span class="stat-num" data-target="100">0</span>
+            <span class="stat-unit">%</span>
+          </div>
+          <span class="stat-label">Frontend Only</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="0">0</span>
+          <span class="stat-label">Dependencies</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="mockup-card">
+        <div class="mockup-header">
+          <div class="mockup-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="mockup-title">TaskFlow</span>
+        </div>
+        <div class="mockup-body">
+          <div class="mock-task done">
+            <div class="mock-check"></div>
+            <div class="mock-text"></div>
+          </div>
+          <div class="mock-task done">
+            <div class="mock-check"></div>
+            <div class="mock-text short"></div>
+          </div>
+          <div class="mock-task active">
+            <div class="mock-check active-check"></div>
+            <div class="mock-text medium"></div>
+          </div>
+          <div class="mock-task">
+            <div class="mock-check"></div>
+            <div class="mock-text long"></div>
+          </div>
+          <div class="mock-task">
+            <div class="mock-check"></div>
+            <div class="mock-text short"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="section-header">
+      <span class="section-tag">Features</span>
+      <h2 class="section-title">Everything you need,<br><span class="gradient-text">nothing you don't.</span></h2>
+      <p class="section-desc">
+        A thoughtfully crafted task manager with all the essentials — 
+        clean UI, priority system, filtering, and persistent storage.
+      </p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon fi-purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+        </div>
+        <h3>Quick Add</h3>
+        <p>Type and hit enter. Add tasks instantly with zero friction. Keyboard-first design for power users.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-orange">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+          </svg>
+        </div>
+        <h3>Inline Editing</h3>
+        <p>Click to edit any task on the fly. No popups, no modals — just seamless inline text editing.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <h3>Priority System</h3>
+        <p>Color-coded High, Medium, Low priorities so you always know what to tackle first.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+          </svg>
+        </div>
+        <h3>Smart Filters</h3>
+        <p>Filter between All, Active, and Completed tasks with a smooth animated toggle.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-pink">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <h3>Local Storage</h3>
+        <p>Your tasks persist across browser sessions. No account needed — data stays on your device.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon fi-cyan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+        </div>
+        <h3>Dark & Light</h3>
+        <p>Toggle between dark and light themes. Your preference is saved automatically.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Section -->
+  <section class="app-section" id="app">
+    <div class="section-header">
+      <span class="section-tag">Try It</span>
+      <h2 class="section-title">Start managing tasks<br><span class="gradient-text">right now.</span></h2>
+    </div>
+
+    <div class="app-wrapper">
+      <!-- App Header -->
+      <div class="app-header">
+        <div class="app-logo">
+          <div class="app-logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Task<span>Flow</span></h3>
+            <p class="app-tagline">Stay productive</p>
+          </div>
+        </div>
+        <div class="app-stats">
+          <div class="app-stat">
+            <span class="app-stat-num" id="taskCount">0</span>
+            <span class="app-stat-label">Total</span>
+          </div>
+          <div class="app-stat">
+            <span class="app-stat-num accent" id="activeCount">0</span>
+            <span class="app-stat-label">Active</span>
+          </div>
+          <div class="app-stat">
+            <span class="app-stat-num green" id="doneCount">0</span>
+            <span class="app-stat-label">Done</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Area -->
+      <div class="app-input-area">
+        <div class="input-box">
+          <div class="input-prefix">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+          </div>
+          <input type="text" id="taskInput" placeholder="What do you need to do?" autocomplete="off">
+          <div class="input-priority">
+            <button class="priority-btn active" data-priority="low" title="Low priority">
+              <span class="priority-dot low"></span>
+              Low
+            </button>
+            <button class="priority-btn" data-priority="medium" title="Medium priority">
+              <span class="priority-dot medium"></span>
+              Med
+            </button>
+            <button class="priority-btn" data-priority="high" title="High priority">
+              <span class="priority-dot high"></span>
+              High
+            </button>
+          </div>
+          <button class="submit-btn" id="addBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="app-filters">
+        <button class="filter-tab active" data-filter="all">
+          <span class="filter-dot"></span>
+          All
+          <span class="filter-count" id="filterAll">0</span>
+        </button>
+        <button class="filter-tab" data-filter="active">
+          <span class="filter-dot"></span>
+          Active
+          <span class="filter-count" id="filterActive">0</span>
+        </button>
+        <button class="filter-tab" data-filter="completed">
+          <span class="filter-dot"></span>
+          Completed
+          <span class="filter-count" id="filterDone">0</span>
+        </button>
+        <div class="filter-slider" id="filterSlider"></div>
+      </div>
+
+      <!-- Task List -->
+      <div class="task-list" id="taskList">
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState">
+          <div class="empty-artwork">
+            <div class="empty-circle ec-1"></div>
+            <div class="empty-circle ec-2"></div>
+            <div class="empty-circle ec-3"></div>
+            <svg class="empty-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10 9 9 9 8 9"/>
+            </svg>
+          </div>
+          <h4>Your task list is empty</h4>
+          <p>Add your first task above and start being productive!</p>
+        </div>
+      </div>
+
+      <!-- Footer Bar -->
+      <div class="app-footer" id="appFooter">
+        <span class="footer-info"><span id="footerActive">0</span> items remaining</span>
+        <button class="footer-clear" id="clearCompleted">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="3 6 5 6 21 6"/>
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+          </svg>
+          Clear completed
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span>Task<span class="brand-highlight">Flow</span></span>
+        <p>A clean, minimal task manager built with vanilla HTML, CSS & JavaScript. Designed for portfolios.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Tech Stack</h4>
+        <ul>
+          <li>HTML5</li>
+          <li>CSS3 (Custom Properties)</li>
+          <li>Vanilla JavaScript</li>
+          <li>LocalStorage API</li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Features</h4>
+        <ul>
+          <li>CRUD Operations</li>
+          <li>Priority System</li>
+          <li>Smart Filtering</li>
+          <li>Dark/Light Theme</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Crafted with care. No frameworks, no libraries — just clean code.</p>
+    </div>
+    <div class="developer-credit">
+      <p>Developed by <a href="https://huzaifabhai.site" target="_blank" rel="noopener noreferrer">Huzaifa Bhai</a></p>
+    </div>
+  </footer>
+
+  <!-- Floating Theme Toggle -->
+  <button class="floating-theme" id="floatingTheme" title="Toggle Dark/Light Mode">
+    <div class="ft-track">
+      <div class="ft-thumb"></div>
+      <svg class="ft-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+      <svg class="ft-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </div>
+  </button>
+
+  <script src="app.js"></script>
+</body>
+</html>
